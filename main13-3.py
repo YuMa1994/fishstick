@@ -36,10 +36,11 @@ def login_with_enter():
     driver.find_element(By.XPATH, '//input[@id="user-name"]').send_keys('standard_user')
     file.write("Success login input \n")
 
-    driver.find_element(By.XPATH, '//input[@id="password"]').send_keys('secret_sauce')
+    user_pass = driver.find_element(By.XPATH, '//input[@id="password"]')
+    user_pass.send_keys('secret_sauce')
     file.write("Success password input \n")
 
-    driver.find_element(By.XPATH, '//input[@id="password"]').send_keys(Keys.ENTER)
+    user_pass.send_keys(Keys.ENTER)
     file.write("Success Enter \n")
 
 def fake_login():
