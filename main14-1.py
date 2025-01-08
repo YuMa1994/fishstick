@@ -15,13 +15,13 @@ driver = webdriver.Chrome(options=option)
 driver.get('https://demoqa.com/checkbox')
 driver.maximize_window()
 
-def expand_list():
-    main_list_expand = driver.find_element(By.XPATH, '//*[@id="tree-node"]/div/button[1]')
-    main_list_expand.click()
+def expand_list_click():
+    expand_list_button = driver.find_element(By.XPATH, '//*[@id="tree-node"]/div/button[1]')
+    expand_list_button.click()
 
-def home_check_box():
-    home_check_box_click = driver.find_element(By.XPATH, '//*[@id="tree-node"]/ol/li/span/label/span[1]')
-    home_check_box_click.click()
+def home_check_box_click():
+    home_check_box = driver.find_element(By.XPATH, '//*[@id="tree-node"]/ol/li/span/label/span[1]')
+    home_check_box.click()
 
 
 # Tests
@@ -38,9 +38,9 @@ def test_context_after_home_checkbox_click():
     assert correct_text == current_text.text, 'test_context_after_home_checkbox_click is FAILED'
     file.write('test_context_after_home_checkbox_click is OK')
 
-expand_list()
+expand_list_click()
 test_context_after_expand_list()
-home_check_box()
+home_check_box_click()
 test_context_after_home_checkbox_click()
 
 file.close()
